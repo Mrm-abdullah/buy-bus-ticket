@@ -1,2 +1,5 @@
 repo link:
 https://github.com/Mrm-abdullah/buy-bus-ticket
+
+live link:
+https://mrm-abdullah.github.io/buy-bus-ticket/

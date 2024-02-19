@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+
+
 </head>
 <body>
     <header class="">
@@ -35,13 +37,13 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a href="#order-seat-section" class="btn bg-[#1DD1001a] text-[#1DD100] text-xl font-bold border border-[#1DD10066]">Bus <img src="./images/bus-icon.png" alt="" srcset=""></a>
+                    <a href="" class="btn bg-[#1DD1001a] text-[#1DD100] text-xl font-bold border border-[#1DD10066]">Bus <img src="./images/bus-icon.png" alt="" srcset=""></a>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <section class="max-w-[1173px] mx-auto mt-5 ">
+        <section class="max-w-[1173px] mx-auto mt-5 hidden">
             <div class="card bg-base-100 shadow-xl image-full">
                 <figure><img src="./images/banner.png" alt="Shoes" /></figure>
                 <div class="card-body my-auto">
@@ -50,12 +52,12 @@
                   <h5 class="text-center max-w-[742px] mt-5 mx-auto text-lg">End-to-End Travel with P Paribahan
                     Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</h5>
                   <div class="flex justify-center mt-5">
-                    <a src="#" class="btn text-[#030712] font-bold bg-[#1DD100]">Buy Tickets</a>
+                    <a href="#order-seat-section" class="btn text-[#030712] font-bold bg-[#1DD100]">Buy Tickets</a>
                   </div>
                 </div>
               </div>
         </section>
-        <section class="max-w-[1173px] mx-auto mt-12 ">
+        <section class="max-w-[1173px] mx-auto mt-12 hidden">
             <h1 class="text-center font-bold text-[40px]">Best offers for you</h1>
             <div class="grid grid-cols-2 gap-10 mt-12">
                 <div class="flex justify-around  bg-[#FFBF0F] rounded-xl">
@@ -92,7 +94,7 @@
             </div>
         </section>
         <section class="bg-[#F7F8F8]">
-            <div class="max-w-[1173px] mx-auto my-12 ">
+            <div id="order-seat-section" class="max-w-[1173px] mx-auto my-12 py-5">
                 <div>
                     <h2 class="text-center font-bold text-[40px] text-[#030712]">P.H Paribahan</h2>
                     <p class="text-center py-5 text-lg text-[#03071299] max-w-[735px] mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
@@ -110,7 +112,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a class="btn bg-[#1DD1001a] text-[#1DD100] text-xl font-bold border border-[#1DD10066]"> <img src="./images/bus-icon.png" alt="" srcset=""> <span>40</span> seats left</a>
+                                <a href="" class="btn bg-[#1DD1001a] text-[#1DD100] text-xl font-bold border border-[#1DD10066]"> <img src="./images/bus-icon.png" alt="" srcset=""> <span id="seat-off">8</span> seats left</a>
                             </div>
                         </div>
                         <div class="bg-[#F7F8F8]">
@@ -140,7 +142,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="order-seat-section" class="bg-white my-5 rounded-xl grid grid-cols-2 gap-10 p-5">
+                <div id="" class="bg-white my-5 rounded-xl grid grid-cols-2 gap-10 p-5">
                     <div class="">
                         <h2 class="font-semibold text-2xl text-[#030712]">Select Your Seat</h2>
                         <div class="flex  py-5 justify-between">
@@ -152,7 +154,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between gap-5 py-1">
-                                <div class=" p-5 ">A</div>
+                                <div id="" class=" p-5 ">A</div>
                                 <div class=" p-5 seats">A1</div>
                                 <div class=" p-5 seats">A2</div>
                                 <div class=" p-5 seats">A3</div>
@@ -174,18 +176,21 @@
                         <h2 class="font-semibold text-2xl text-[#030712]">Select Your Seat</h2>
                         <div>
                             <div class="flex justify-between p-5">
-                                <div class="font-medium text-[#030712]">Seat <span class="bg-[#1DD100] p-1 rounded-lg"> 5</span></div>
+                                <div class="font-medium text-[#030712]">Seat <span id="seat-count" class="bg-[#1DD100] p-1 rounded-lg"> 0</span></div>
                                 <div class="font-medium text-[#030712]">Class</div>
                                 <div class="font-medium text-[#030712]">550</div>
                             </div>
-                            <div class="flex justify-between p-5">
-                                <div>C2</div>
-                                <div>Economoy</div>
-                                <div>550</div>
+                            <div id="seat-list" >
+                                <!-- <div class="flex justify-between p-5 ">
+                                    <div>C2</div>
+                                    <div>Economoy</div>
+                                    <div>550</div>
+                                </div> -->
                             </div>
+
                             <div class="flex justify-between p-5">
                                 <div class="font-medium text-[#030712]">Total Price</div>
-                                <div class="font-medium text-[#030712]">BDT <span>1100</span></div>
+                                <div class="font-medium text-[#030712]">BDT <span id="amount">1100</span></div>
                             </div>
                             <div class="flex justify-between p-5">
                                 <input placeholder="Have any copupon?" type="text">
@@ -216,5 +221,6 @@
         </section>
     </main>
     <footer class="mb-24"></footer>
+    <script src="./ticket.js"></script>
 </body>
 </html>
