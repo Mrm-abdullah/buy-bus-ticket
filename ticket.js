@@ -7,28 +7,30 @@ for (let index = 0; index < seats.length; index++) {
         const seatCount = document.getElementById('seat-count');
         const seatList = document.getElementById('seat-list');
         const idAmount = document.getElementById('amount');
+        const grandamount = document.getElementById('grandamount');
         const seatNum = parseInt(seatOff.innerText);
         const countNum = parseInt(seatCount.innerText);
 
         if (countNum < 4 ) {
-            amount = amount + 550
-            idAmount.innerText = amount;
-            seatOff.innerText = seatNum - 1;
-            seatCount.innerText = countNum + 1;
-            const getSeatNo = seat.innerText;
-
-            seat.classList.add('bg-green-500')
-
-                            
+            if (!seat.classList.contains('bg-green-500')) {
+                amount = amount + 550
+                idAmount.innerText = amount;
+                grandamount.innerText = amount;
+                seatOff.innerText = seatNum - 1;
+                seatCount.innerText = countNum + 1;
+                const getSeatNo = seat.innerText;
+                
+                seat.classList.add('bg-green-500')
+                
                 const div0 = document.createElement('div');
                 const div1 = document.createElement('div');
                 const div2 = document.createElement('div');
                 const div3 = document.createElement('div');
-
+                
                 div0.classList.add("flex");
                 div0.classList.add("justify-between");
                 div0.classList.add("p-5");
-
+                
                 div1.innerText = getSeatNo;
                 div2.innerText = 'Economoy';
                 div3.innerText = 550;
@@ -36,20 +38,53 @@ for (let index = 0; index < seats.length; index++) {
                 div0.appendChild(div2);
                 div0.appendChild(div3);
                 seatList.appendChild(div0);
-
-            console.log(div0);
-            console.log(getSeatNo);
-            // console.log(seatList);
-            
+                
+                
+            }else{
+                alert('Already Selected')
+            }
         }else{
+            alert('Already 4 items Selected')
         }
-        
-
-        // console.log(seatCount);
-        // console.log(seatOff);
-        })
+    })
 }
-
+document.getElementById('couponButton').addEventListener('click',function () {
+    const coupon =  document.getElementById('coupon').value;
+    
+    const seatCount = document.getElementById('seat-count');
+    const countNum = parseInt(seatCount.innerText);
+    if (countNum > 0) {
+        if (coupon === 'NEW15' || coupon === 'Couple 20') {
+            const couponMain =  document.getElementById('couponMain');
+            couponMain.classList.add('hidden');
+            
+            const total = amount;
+            if (coupon === 'NEW15') {
+                const discount = total * 0.15
+                
+                const grandtotal = amount - discount;
+                
+                const grandamount = document.getElementById('grandamount');
+                grandamount.innerText = grandtotal;
+                
+                console.log('15%')
+            }
+            if (coupon === 'Couple 20') {
+                const discount = total * 0.20;
+                const grandtotal = amount - discount;
+                
+                const grandamount = document.getElementById('grandamount');
+                grandamount.innerText = grandtotal;
+                console.log('20%')
+            }
+            
+            }else{
+                alert('Please enter valid coupon')
+            }
+    }else{
+        alert('please selected minimum 1 items')
+    }
+})
 
 
 
